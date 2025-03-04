@@ -277,7 +277,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">Call Us</h3>
-                        <p className="text-slate-600">+1 (555) 123-4567</p>
+                        <p className="text-slate-600">+234 (810) 1242-928</p>
                         <p className="text-slate-600">Mon-Fri, 9AM-6PM EST</p>
                       </div>
                     </div>
@@ -288,8 +288,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">Visit Us</h3>
-                        <p className="text-slate-600">100 Innovation Plaza</p>
-                        <p className="text-slate-600">San Francisco, CA 94103</p>
+                        <p className="text-slate-600">10 Innovation Drive</p>
+                        <p className="text-slate-600">Ada George, PH 500102</p>
                       </div>
                     </div>
                   </div>
