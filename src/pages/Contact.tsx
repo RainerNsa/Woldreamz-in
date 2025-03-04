@@ -266,7 +266,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">Email Us</h3>
-                        <p className="text-slate-600">contact@woldreamzinc.com</p>
+                        <p className="text-slate-600">woldreamzinc@gmail.com</p>
                         <p className="text-slate-600">support@woldreamzinc.com</p>
                       </div>
                     </div>

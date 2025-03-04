@@ -95,8 +95,8 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex">
                 <Mail size={20} className="text-woldreamz-blue mr-3 flex-shrink-0" />
-                <a href="mailto:hello@woldreamzinc.com" className="text-slate-300 hover:text-woldreamz-blue transition-colors">
-                  hello@woldreamzinc.com
+                <a href="mailto:woldreamzinc@gmail.com" className="text-slate-300 hover:text-woldreamz-blue transition-colors">
+                  woldreamzinc@gmail.com
                 </a>
               </li>
               <li className="flex">

@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import AIChatAssistant from '@/components/AIChatAssistant';
@@ -199,9 +200,9 @@ const Blog = () => {
                           <p className="text-xs text-slate-500">{featuredPost.date}</p>
                         </div>
                       </div>
-                      <button className="text-woldreamz-blue font-medium flex items-center hover:text-woldreamz-darkBlue transition-colors">
+                      <Link to={`/blog/${featuredPost.id}`} className="text-woldreamz-blue font-medium flex items-center hover:text-woldreamz-darkBlue transition-colors">
                         Read more <ArrowRight size={16} className="ml-1" />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -257,9 +258,9 @@ const Blog = () => {
                           <Calendar size={14} className="mr-1" />
                           {post.date}
                         </div>
-                        <button className="text-woldreamz-blue font-medium text-sm flex items-center hover:text-woldreamz-darkBlue transition-colors">
+                        <Link to={`/blog/${post.id}`} className="text-woldreamz-blue font-medium text-sm flex items-center hover:text-woldreamz-darkBlue transition-colors">
                           Read more <ArrowRight size={14} className="ml-1" />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </motion.div>
