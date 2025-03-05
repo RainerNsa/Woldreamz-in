@@ -101,15 +101,15 @@ const Footer = () => {
               </li>
               <li className="flex">
                 <Phone size={20} className="text-woldreamz-blue mr-3 flex-shrink-0" />
-                <a href="tel:+1234567890" className="text-slate-300 hover:text-woldreamz-blue transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+2348101242928" className="text-slate-300 hover:text-woldreamz-blue transition-colors">
+                  +234 (810) 1242-928
                 </a>
               </li>
               <li className="flex">
                 <MapPin size={20} className="text-woldreamz-blue mr-3 flex-shrink-0 mt-1" />
                 <address className="text-slate-300 not-italic">
-                  1234 Innovation Drive, <br />
-                  Tech Hub, CA 90210
+                  10 Innovation Drive, <br />
+                  Ada George, PH 500102
                 </address>
               </li>
             </ul>
