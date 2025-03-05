@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
@@ -88,7 +87,6 @@ const Blog = () => {
     }
   ];
   
-  // Filter posts based on category and search query
   const filteredPosts = blogPosts
     .filter(post => selectedCategory === 'all' || post.category === selectedCategory)
     .filter(post => 
@@ -96,16 +94,14 @@ const Blog = () => {
       post.excerpt.toLowerCase().includes(searchQuery.toLowerCase())
     );
   
-  // Find featured post
   const featuredPost = blogPosts.find(post => post.featured);
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen page-background">
       <Navigation />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-8">
-          {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,7 +117,6 @@ const Blog = () => {
             </p>
           </motion.div>
           
-          {/* Search and Filter */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -158,7 +153,6 @@ const Blog = () => {
             </div>
           </motion.div>
           
-          {/* Featured Post */}
           {featuredPost && (
             <motion.div 
               initial={{ opacity: 0 }}
@@ -210,7 +204,6 @@ const Blog = () => {
             </motion.div>
           )}
           
-          {/* Latest Articles */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -269,7 +262,6 @@ const Blog = () => {
             )}
           </motion.div>
           
-          {/* Newsletter Subscription */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -297,7 +289,6 @@ const Blog = () => {
             </div>
           </motion.div>
           
-          {/* Topics Section */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

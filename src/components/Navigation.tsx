@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
@@ -100,7 +99,7 @@ const Navigation = () => {
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={toggleMenu}
-          className="md:hidden relative z-10 text-gray-600 dark:text-gray-300 focus:outline-none"
+          className="md:hidden relative z-10 text-gray-600 dark:text-gray-200 focus:outline-none"
           aria-label="Toggle Menu"
         >
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -186,7 +185,7 @@ const Navigation = () => {
             className="md:hidden absolute top-full left-0 w-full glassmorphism-dropdown shadow-lg overflow-hidden"
           >
             <motion.nav 
-              className="flex flex-col p-4 space-y-2" 
+              className="flex flex-col p-4 space-y-2"
               variants={containerVariants}
               initial="hidden"
               animate="visible"

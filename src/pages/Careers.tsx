@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -278,7 +277,6 @@ const Careers = () => {
     }
   ];
   
-  // Filter jobs based on selected filters
   const filteredJobs = jobs.filter(job => 
     (selectedDepartment === 'all' || job.department === selectedDepartment) &&
     (selectedLocation === 'all' || job.location === selectedLocation) &&
@@ -300,12 +298,11 @@ const Careers = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen page-background">
       <Navigation />
       
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-8">
-          {/* Hero Section */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -321,7 +318,6 @@ const Careers = () => {
             </p>
           </motion.div>
           
-          {/* Work Culture Section */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -355,7 +351,6 @@ const Careers = () => {
             </div>
           </motion.div>
           
-          {/* Benefits Section */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -419,7 +414,6 @@ const Careers = () => {
             </div>
           </motion.div>
           
-          {/* Open Positions Section */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -434,7 +428,6 @@ const Careers = () => {
               </p>
             </div>
             
-            {/* Filters */}
             <div className="mb-8">
               <button 
                 onClick={() => setShowFilters(!showFilters)}
@@ -489,108 +482,108 @@ const Careers = () => {
               </div>
             </div>
             
-            {/* Job Listings */}
-            {filteredJobs.length === 0 ? (
-              <div className="text-center py-16">
-                <p className="text-slate-600">No open positions matching your criteria at the moment.</p>
-                <button 
-                  onClick={() => {
-                    setSelectedDepartment('all');
-                    setSelectedLocation('all');
-                    setSelectedType('all');
-                  }}
-                  className="mt-4 text-woldreamz-blue font-medium"
-                >
-                  Clear filters
-                </button>
-              </div>
-            ) : (
-              <div className="space-y-6">
-                {filteredJobs.map((job) => (
-                  <motion.div
-                    key={job.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3 }}
-                    className="glass-card rounded-xl overflow-hidden"
+            <div className="space-y-6">
+              {filteredJobs.length === 0 ? (
+                <div className="text-center py-16">
+                  <p className="text-slate-600">No open positions matching your criteria at the moment.</p>
+                  <button 
+                    onClick={() => {
+                      setSelectedDepartment('all');
+                      setSelectedLocation('all');
+                      setSelectedType('all');
+                    }}
+                    className="mt-4 text-woldreamz-blue font-medium"
                   >
-                    <div 
-                      className="p-6 cursor-pointer"
-                      onClick={() => toggleJobExpansion(job.id)}
+                    Clear filters
+                  </button>
+                </div>
+              ) : (
+                <div className="space-y-6">
+                  {filteredJobs.map((job) => (
+                    <motion.div
+                      key={job.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3 }}
+                      className="glass-card rounded-xl overflow-hidden"
                     >
-                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 className="text-xl font-bold">{job.title}</h3>
-                        <div className="flex flex-wrap gap-2 mt-2 md:mt-0">
-                          <span className="text-xs font-semibold uppercase tracking-wider text-woldreamz-blue bg-woldreamz-50 px-2 py-1 rounded-full">
-                            {departments.find(d => d.id === job.department)?.name}
-                          </span>
-                          <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-1 rounded-full flex items-center">
-                            <MapPin size={12} className="mr-1" />
-                            {locations.find(l => l.id === job.location)?.name}
-                          </span>
-                          <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-1 rounded-full flex items-center">
-                            <Clock size={12} className="mr-1" />
-                            {jobTypes.find(t => t.id === job.type)?.name}
-                          </span>
+                      <div 
+                        className="p-6 cursor-pointer"
+                        onClick={() => toggleJobExpansion(job.id)}
+                      >
+                        <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                          <h3 className="text-xl font-bold">{job.title}</h3>
+                          <div className="flex flex-wrap gap-2 mt-2 md:mt-0">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-woldreamz-blue bg-woldreamz-50 px-2 py-1 rounded-full">
+                              {departments.find(d => d.id === job.department)?.name}
+                            </span>
+                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-1 rounded-full flex items-center">
+                              <MapPin size={12} className="mr-1" />
+                              {locations.find(l => l.id === job.location)?.name}
+                            </span>
+                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-700 bg-slate-100 px-2 py-1 rounded-full flex items-center">
+                              <Clock size={12} className="mr-1" />
+                              {jobTypes.find(t => t.id === job.type)?.name}
+                            </span>
+                          </div>
+                        </div>
+                        
+                        <p className="text-slate-600 mb-4">{job.description}</p>
+                        
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-slate-500">Posted {job.posted}</span>
+                          <div className="flex items-center text-woldreamz-blue">
+                            {expandedJob === job.id ? 'Show less' : 'Show more'}
+                            {expandedJob === job.id ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
+                          </div>
                         </div>
                       </div>
                       
-                      <p className="text-slate-600 mb-4">{job.description}</p>
-                      
-                      <div className="flex items-center justify-between">
-                        <span className="text-sm text-slate-500">Posted {job.posted}</span>
-                        <div className="flex items-center text-woldreamz-blue">
-                          {expandedJob === job.id ? 'Show less' : 'Show more'}
-                          {expandedJob === job.id ? <ChevronUp size={16} className="ml-1" /> : <ChevronDown size={16} className="ml-1" />}
+                      {expandedJob === job.id && (
+                        <div className="border-t border-slate-100 p-6 bg-white/50">
+                          <div className="mb-6">
+                            <h4 className="font-bold mb-3">Responsibilities</h4>
+                            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+                              {job.responsibilities.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div className="mb-6">
+                            <h4 className="font-bold mb-3">Requirements</h4>
+                            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+                              {job.requirements.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <div className="mb-6">
+                            <h4 className="font-bold mb-3">Benefits</h4>
+                            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+                              {job.benefits.map((item, index) => (
+                                <li key={index}>{item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                          
+                          <button 
+                            onClick={() => openApplication(job)}
+                            className="btn-primary w-full"
+                          >
+                            Apply for this position
+                          </button>
                         </div>
-                      </div>
-                    </div>
-                    
-                    {expandedJob === job.id && (
-                      <div className="border-t border-slate-100 p-6 bg-white/50">
-                        <div className="mb-6">
-                          <h4 className="font-bold mb-3">Responsibilities</h4>
-                          <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                            {job.responsibilities.map((item, index) => (
-                              <li key={index}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div className="mb-6">
-                          <h4 className="font-bold mb-3">Requirements</h4>
-                          <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                            {job.requirements.map((item, index) => (
-                              <li key={index}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <div className="mb-6">
-                          <h4 className="font-bold mb-3">Benefits</h4>
-                          <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                            {job.benefits.map((item, index) => (
-                              <li key={index}>{item}</li>
-                            ))}
-                          </ul>
-                        </div>
-                        
-                        <button 
-                          onClick={() => openApplication(job)}
-                          className="btn-primary w-full"
-                        >
-                          Apply for this position
-                        </button>
-                      </div>
-                    )}
-                  </motion.div>
-                ))}
-              </div>
-            )}
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              )}
+            </div>
           </motion.div>
           
-          {/* Talent Network Section */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -618,7 +611,6 @@ const Careers = () => {
             </div>
           </motion.div>
           
-          {/* Refer a Friend Section */}
           <motion.div 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -637,7 +629,6 @@ const Careers = () => {
         </div>
       </main>
       
-      {/* Job Application Modal */}
       {applicationOpen && currentJob && (
         <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4" onClick={closeApplication}>
           <motion.div

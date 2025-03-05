@@ -10,7 +10,7 @@ import AIChatAssistant from '@/components/AIChatAssistant';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen page-background">
       <Navigation />
       <Hero />
       <Services />

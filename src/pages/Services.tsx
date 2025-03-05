@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -24,7 +23,7 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen page-background">
       <Navigation />
       
       <main className="pt-24 pb-16">
@@ -45,9 +44,9 @@ const ServicesPage = () => {
             </p>
           </motion.div>
           
-          <div className="relative mb-24">
-            <div className="absolute -top-40 -left-40 w-80 h-80 bg-woldreamz-50 rounded-full filter blur-3xl opacity-30 animate-float"></div>
-            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-woldreamz-100 rounded-full filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="relative mb-24 rounded-3xl overflow-hidden p-8 backdrop-blur-lg bg-white bg-opacity-5 border border-white border-opacity-10">
+            <div className="absolute -top-40 -left-40 w-80 h-80 bg-woldreamz-50 rounded-full filter blur-3xl opacity-20 animate-float"></div>
+            <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-woldreamz-100 rounded-full filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
             <Services />
           </div>
           
@@ -58,7 +57,7 @@ const ServicesPage = () => {
             viewport={{ once: true, amount: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24"
           >
-            <motion.div variants={item} className="glass-card p-8 rounded-2xl">
+            <motion.div variants={item} className="glass-card p-8 rounded-2xl backdrop-blur-lg bg-white bg-opacity-5 border border-white border-opacity-10">
               <h2 className="text-2xl font-bold mb-6 flex items-center">
                 <Sparkles className="text-woldreamz-blue mr-3" />
                 Our Process
@@ -77,7 +76,7 @@ const ServicesPage = () => {
                     transition={{ delay: i * 0.1 }}
                     className="flex"
                   >
-                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-woldreamz-50 flex items-center justify-center text-woldreamz-blue font-bold mr-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-woldreamz-50 bg-opacity-50 flex items-center justify-center text-woldreamz-blue font-bold mr-4">
                       {i + 1}
                     </span>
                     <div>
@@ -89,7 +88,7 @@ const ServicesPage = () => {
               </ol>
             </motion.div>
             
-            <motion.div variants={item} className="glass-card p-8 rounded-2xl">
+            <motion.div variants={item} className="glass-card p-8 rounded-2xl backdrop-blur-lg bg-white bg-opacity-5 border border-white border-opacity-10">
               <h2 className="text-2xl font-bold mb-6">Why Choose Us</h2>
               <ul className="space-y-4">
                 {[
@@ -105,7 +104,7 @@ const ServicesPage = () => {
                     transition={{ delay: i * 0.1 }}
                     className="flex items-start"
                   >
-                    <div className="bg-woldreamz-50 p-2 rounded-lg text-woldreamz-blue mr-3">
+                    <div className="bg-woldreamz-50 bg-opacity-50 p-2 rounded-lg text-woldreamz-blue mr-3">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 6L9 17L4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
@@ -126,7 +125,7 @@ const ServicesPage = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Ready to Transform Your Business?</h2>
             <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
               Let's discuss how our services can help you achieve your goals and drive growth.
             </p>

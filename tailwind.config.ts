@@ -134,6 +134,10 @@ export default {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
 				},
+				'color-transition': {
+					'0%': { color: 'inherit' },
+					'100%': { color: 'currentColor' }
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -144,14 +148,23 @@ export default {
 				'slide-down': 'slide-down 0.6s ease-out forwards',
 				'text-spotlight': 'text-spotlight 4s ease-in-out infinite alternate',
 				'float': 'float 6s ease-in-out infinite',
+				'color-transition': 'color-transition 0.3s ease-in-out',
 			},
 			boxShadow: {
 				'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
 				'neuro': '5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff',
+				'neuro-dark': '5px 5px 10px rgba(0, 0, 0, 0.3), -5px -5px 10px rgba(255, 255, 255, 0.05)',
 				'soft': '0 8px 30px rgba(0, 0, 0, 0.05)',
+				'glow': '0 0 15px rgba(41, 121, 255, 0.6)',
+				'glow-dark': '0 0 15px rgba(94, 155, 255, 0.4)',
 			},
 			backdropBlur: {
 				xs: '2px',
+			},
+			textShadow: {
+				sm: '0 1px 2px rgba(0, 0, 0, 0.1)',
+				DEFAULT: '0 2px 4px rgba(0, 0, 0, 0.1)',
+				lg: '0 8px 16px rgba(0, 0, 0, 0.1)',
 			},
 		}
 	},

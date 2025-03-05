@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navigation from '@/components/Navigation';
@@ -49,7 +48,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen page-background">
       <Navigation />
       
       <main className="pt-24 pb-16">
@@ -75,7 +74,6 @@ const Contact = () => {
             <div className="absolute -bottom-20 -right-20 w-80 h-80 bg-woldreamz-100 rounded-full filter blur-3xl opacity-30 animate-float" style={{ animationDelay: '2s' }}></div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start relative z-10">
-              {/* Contact Form */}
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -250,7 +248,6 @@ const Contact = () => {
                 )}
               </motion.div>
               
-              {/* Contact Information */}
               <motion.div 
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -277,7 +274,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">Call Us</h3>
-                        <p className="text-slate-600">+234 (810) 1242-928</p>
+                        <p className="text-slate-600">+1 (555) 123-4567</p>
                         <p className="text-slate-600">Mon-Fri, 9AM-6PM EST</p>
                       </div>
                     </div>
@@ -288,8 +285,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold text-lg">Visit Us</h3>
-                        <p className="text-slate-600">10 Innovation Drive</p>
-                        <p className="text-slate-600">Ada George, PH 500102</p>
+                        <p className="text-slate-600">100 Innovation Plaza</p>
+                        <p className="text-slate-600">San Francisco, CA 94103</p>
                       </div>
                     </div>
                   </div>

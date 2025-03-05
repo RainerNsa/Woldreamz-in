@@ -52,7 +52,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="min-h-screen page-background">
       <Navigation />
       
       <main className="pt-24 pb-16">
