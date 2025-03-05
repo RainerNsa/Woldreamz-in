@@ -127,7 +127,7 @@ const ServicesPage = () => {
           >
             <h2 className="text-3xl font-bold mb-6 gradient-text">Ready to Transform Your Business?</h2>
             <p className="text-slate-600 mb-8 max-w-2xl mx-auto">
-              Let's discuss how our services can help you achieve your goals and drive growth.
+              Let's discuss how our services can help you achieve your unique goals and drive growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="btn-primary">
