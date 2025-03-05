@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
@@ -65,21 +64,24 @@ const Testimonials = () => {
   }, [activeIndex, isAnimating]);
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section className="py-16 md:py-24 relative overflow-hidden">
+      <div className="absolute -top-[200px] -right-[200px] w-[500px] h-[500px] bg-woldreamz-50 rounded-full filter blur-3xl opacity-20 animate-float"></div>
+      <div className="absolute -bottom-[150px] -left-[150px] w-[400px] h-[400px] bg-woldreamz-100 rounded-full filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '3s' }}></div>
+      
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          <p className="text-slate-600">Hear from our valued clients about their experiences working with Woldreamz Inc.</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">What Our Clients Say</h2>
+          <p className="text-slate-300">Hear from our valued clients about their experiences working with Woldreamz Inc.</p>
         </div>
         
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto rounded-3xl overflow-hidden p-8 backdrop-blur-lg bg-white bg-opacity-5 border border-white border-opacity-10">
           {/* Testimonial Cards */}
           <div className="relative h-[400px] md:h-[300px]">
             {testimonials.map((testimonial, index) => (
               <div
                 key={testimonial.id}
                 className={cn(
-                  "absolute w-full transition-all duration-500 glass-card p-8",
+                  "absolute w-full transition-all duration-500 p-6 rounded-2xl backdrop-blur-lg bg-white bg-opacity-5 border border-white border-opacity-10",
                   index === activeIndex
                     ? "opacity-100 translate-x-0 z-20"
                     : index === (activeIndex + 1) % testimonials.length
@@ -91,7 +93,7 @@ const Testimonials = () => {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.name}
-                    className="w-16 h-16 rounded-full object-cover border-2 border-woldreamz-blue"
+                    className="w-16 h-16 rounded-full object-cover border-2 border-woldreamz-blue/50"
                   />
                   
                   <div className="flex-1">
@@ -101,15 +103,17 @@ const Testimonials = () => {
                           key={i}
                           className={cn(
                             "h-4 w-4",
-                            i < testimonial.rating ? "text-amber-500 fill-amber-500" : "text-gray-300"
+                            i < testimonial.rating 
+                              ? "text-amber-400 fill-amber-400/30" 
+                              : "text-slate-500 fill-slate-500/20"
                           )}
                         />
                       ))}
                     </div>
-                    <p className="text-slate-600 italic mb-4">{testimonial.content}</p>
+                    <p className="text-slate-300 italic mb-4">"{testimonial.content}"</p>
                     <div>
                       <h4 className="font-bold text-woldreamz-blue">{testimonial.name}</h4>
-                      <p className="text-sm text-slate-500">{testimonial.role}</p>
+                      <p className="text-sm text-slate-400">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
@@ -120,7 +124,7 @@ const Testimonials = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600 hover:text-woldreamz-blue transition-colors z-30"
+            className="absolute top-1/2 -left-4 md:-left-12 -translate-y-1/2 w-10 h-10 rounded-full backdrop-blur-lg bg-white/5 border border-white/10 shadow-sm flex items-center justify-center text-slate-300 hover:text-woldreamz-blue hover:border-woldreamz-blue/30 transition-all z-30"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={20} />
@@ -128,7 +132,7 @@ const Testimonials = () => {
           
           <button
             onClick={nextTestimonial}
-            className="absolute top-1/2 -right-4 md:-right-12 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center text-slate-600 hover:text-woldreamz-blue transition-colors z-30"
+            className="absolute top-1/2 -right-4 md:-right-12 -translate-y-1/2 w-10 h-10 rounded-full backdrop-blur-lg bg-white/5 border border-white/10 shadow-sm flex items-center justify-center text-slate-300 hover:text-woldreamz-blue hover:border-woldreamz-blue/30 transition-all z-30"
             aria-label="Next testimonial"
           >
             <ChevronRight size={20} />
@@ -141,10 +145,10 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={cn(
-                  "w-2 h-2 rounded-full transition-all duration-300",
+                  "w-2 h-2 rounded-full transition-all duration-300 backdrop-blur-sm",
                   index === activeIndex
-                    ? "bg-woldreamz-blue w-4"
-                    : "bg-slate-300 hover:bg-slate-400"
+                    ? "bg-woldreamz-blue w-4 bg-opacity-100"
+                    : "bg-slate-500 bg-opacity-30 hover:bg-opacity-50"
                 )}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

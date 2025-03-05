@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 
 interface StatItemProps {
@@ -53,24 +52,24 @@ const StatItem: React.FC<StatItemProps> = ({ value, suffix = '', label, duration
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-4xl font-bold text-woldreamz-blue mb-2">
+      <div className="text-4xl font-bold gradient-text mb-2">
         {count}{suffix}
       </div>
-      <p className="text-slate-600">{label}</p>
+      <p className="text-slate-300 text-sm">{label}</p>
     </div>
   );
 };
 
 const Stats = () => {
   return (
-    <section className="py-16 bg-white relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-slate-50 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-slate-50 to-transparent"></div>
+    <section className="py-16 md:py-24 relative overflow-hidden page-background">
+      <div className="absolute -top-[200px] -left-[200px] w-[500px] h-[500px] bg-woldreamz-50 rounded-full filter blur-3xl opacity-20 animate-float"></div>
+      <div className="absolute -bottom-[150px] -right-[150px] w-[400px] h-[400px] bg-woldreamz-100 rounded-full filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
       
-      <div className="container mx-auto px-4 md:px-8">
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
-          <div className="glass-card p-8 md:p-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="backdrop-blur-lg bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               <StatItem value={500} suffix="+" label="Projects Delivered" />
               <StatItem value={98} suffix="%" label="Client Satisfaction" />
               <StatItem value={7} suffix="+" label="Years Experience" />
