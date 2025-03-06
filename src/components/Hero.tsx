@@ -86,7 +86,7 @@ const Hero = () => {
             </div>
             
             <div className="glass-card p-6">
-              <h3 className="text-3xl font-bold text-woldreamz-blue mb-1">500+</h3>
+              <h3 className="text-3xl font-bold text-woldreamz-blue mb-1">300+</h3>
               <p className="text-sm text-slate-600 dark:text-slate-300">Projects Delivered Successfully</p>
             </div>
             
